@@ -67,6 +67,20 @@ body {
    background-color: #20C20E;
    color: #fff;
  }
+
+ .add-task {
+   text-decoration: none;
+   color: #000;
+   border: 1px solid #6c757d;
+   border-radius: 20px;
+   padding: 5px;
+   font-size: 15px;
+ }
+
+ .add-task:hover {
+   color: #fff;
+   background-color: #6c757d;
+ }
  
  .category-header {
    margin-top: 50px;
