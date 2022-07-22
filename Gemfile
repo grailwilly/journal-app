@@ -48,6 +48,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.2.0'
 gem 'simplecov', require: false, group: :test
 gem 'jquery-rails'
+gem 'devise'
 
 gem "pg"
 
