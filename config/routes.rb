@@ -8,13 +8,12 @@ Rails.application.routes.draw do
   resources :categories do
     resources :tasks
   end
+  get "/users/sign_out" => "devise/sessions#destroy"
 
-  # get "/users/sign_out" => "sessions#destroy"
 
-
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
+  # devise_scope :user do
+  #   get '/users/sign_out' => 'devise/sessions#destroy'
+  # end
 
   # get 'categories' => 'categories#index'
   # get '/categories/new' => 'categories#new'
