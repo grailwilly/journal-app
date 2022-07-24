@@ -1,0 +1,30 @@
+.login-div, .signup-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-action, .signup-action {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-submit, .signup-submit {
+    padding: 3px !important;
+    font-size: 15px !important;
+    width: 60px !important;
+}
+
+.signup-link, .login-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+}
+
+.signup-link:hover, .login-link:hover {
+    text-decoration: underline;
+    color: #000;
+}
