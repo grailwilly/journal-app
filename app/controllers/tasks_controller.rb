@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
     before_action :get_category
     before_action :get_task, only: ['show', 'edit', 'update', 'destroy']
+    before_action :post_time
   
     def index
       @tasks = @category.tasks
@@ -8,7 +9,6 @@ class TasksController < ApplicationController
   
     def new
       @task = @category.tasks.build
-      @time = Time.new
     end
   
     def show
@@ -47,6 +47,10 @@ class TasksController < ApplicationController
   
     def get_task
       @task = @category.tasks.find(params[:id])
+    end
+
+    def post_time
+      @time = Time.new
     end
   
     def task_params
