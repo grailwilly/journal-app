@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_time
   
   def index
     @categories = Category.all
-    @time = Time.new
   end
 
   def show
@@ -51,6 +51,10 @@ class CategoriesController < ApplicationController
   end
 
   private 
+    def get_time
+      @time = Time.new
+    end
+
     def category_params
       params.require(:category).permit(:name)
     end

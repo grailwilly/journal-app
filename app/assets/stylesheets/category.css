@@ -1,0 +1,36 @@
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.category-list {
+    width: 50%;
+}
+
+.category-list li {
+    list-style: none;
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.category-list li:hover {
+    background-color: #FFC0CB;
+    color: #fff;
+}
+
+.new-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

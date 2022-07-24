@@ -1,13 +1,15 @@
 <%= render "top_nav" %>
 <div class="categories">
   <h1 class="title">THE PROGRAMMER'S LIST</h1>
-  <% @categories.each do |category| %>
-    <ul class="category-list">
-      <li><%= link_to category.name, category_path(category.id), class: "category-show" %></li>
-    </ul>
-  <% end %>
+  <ul class="category-list">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category.id) do %>
+        <li class="category-show"><%= category.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="add-category">
+    <%= link_to "Add Category", new_category_path, class: "add-category-btn btn btn-outline-secondary" %>
+  </div>
 </div>
 
-<div class="add-category">
-  <%= link_to "Add Category", new_category_path, class: "add-category-btn btn btn-outline-secondary" %>
-</div>
