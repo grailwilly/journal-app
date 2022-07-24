@@ -50,6 +50,8 @@ gem 'simplecov', require: false, group: :test
 gem 'jquery-rails'
 gem 'devise'
 
+gem 'httparty'
+
 gem "pg"
 
 group :development, :test do
