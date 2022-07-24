@@ -1,21 +1,4 @@
-<div id="top-nav">
-  <div class="time">
-    <h1><%= @time.strftime("%I:%M %p") %></h1>
-    <h3><%= @time.strftime("Today is %A") %></h3>
-    <h3><%= @time.strftime("%d of %B, %Y") %></h3>
-  </div>
-  <div class="weather">
-    <ul class="statistic">
-      <li>Weather</li>
-      <li>Temperature</li>
-      <li>Wind Speed</li>
-      <li>Sunset</li>
-      <li>Sunrise</li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    </ul>
-  </div>
-</div>
-
+<%= render "top_nav" %>
 <div class="categories">
   <h1 class="title">THE PROGRAMMER'S LIST</h1>
   <% @categories.each do |category| %>
