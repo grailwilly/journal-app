@@ -8,6 +8,7 @@ class TasksController < ApplicationController
   
     def new
       @task = @category.tasks.build
+      @time = Time.new
     end
   
     def show
@@ -15,9 +16,9 @@ class TasksController < ApplicationController
   
     def create
       @task = @category.tasks.build(task_params)
-  
+            
       if @task.save
-        redirect_to category_tasks_path    
+        redirect_to category_path(@category)    
       else
         render :new
       end
@@ -28,7 +29,7 @@ class TasksController < ApplicationController
   
     def update
       if @task.update(task_params)
-        redirect_to category_tasks_path
+        redirect_to category_path(@category)  
       else
         render :edit, status: :unprocessable_entity
       end
