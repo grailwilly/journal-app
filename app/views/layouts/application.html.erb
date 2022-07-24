@@ -11,12 +11,6 @@
   </head>
 
   <body>
-    <div class="container">
-      <nav class="navbar justify-content-between">
-        <a class="navbar-brand">Daily Dose</a>
-        <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary mr-sm-2" %>
-      </nav>
-    </div>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
