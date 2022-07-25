@@ -27,5 +27,17 @@ body {
   list-style: none;
   padding: 50px;
  }
+
+ .back-arrow img:hover {
+  transform: scale(1.5);
+ }
+ .edit-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+
  
  

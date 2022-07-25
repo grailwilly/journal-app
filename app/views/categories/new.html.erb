@@ -1,6 +1,7 @@
 
 <%= render "top_nav" %>
 <div class="container">
+    <%= link_to image_tag("back-arrow.png"), categories_path, class: "back-arrow" %>
     <div class="new-category">
         <h4 class="modal-title">Add Category</h4>
         <%= render "form", category: @category %>
