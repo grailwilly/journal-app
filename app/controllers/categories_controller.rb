@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :get_time
+  before_action :advice_api
   
   def index
     @categories = Category.all
@@ -53,6 +54,11 @@ class CategoriesController < ApplicationController
   private 
     def get_time
       @time = Time.new
+    end
+
+    def advice_api
+      @response = HTTParty.get("https://api.adviceslip.com/advice")
+      @advice = JSON.parse(@response.body)
     end
 
     def category_params
