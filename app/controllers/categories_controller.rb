@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :get_time
   before_action :advice_api
+  before_action :weather_api
   
   def index
     @categories = Category.all
@@ -59,6 +60,11 @@ class CategoriesController < ApplicationController
     def advice_api
       @response = HTTParty.get("https://api.adviceslip.com/advice")
       @advice = JSON.parse(@response.body)
+    end
+
+    def weather_api
+      @response = HTTParty.get("https://fcc-weather-api.glitch.me/api/current?lat=16.41639&lon=120.59306")
+      @w_json = JSON.parse(@response.body)
     end
 
     def category_params
