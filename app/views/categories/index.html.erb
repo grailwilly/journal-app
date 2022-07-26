@@ -2,8 +2,8 @@
 <div class="categories">
   <h1 class="title">THE PROGRAMMER'S LIST</h1>
   <div class="category-actions">
-    <%= link_to "Add Category", new_category_path, class: "add-category-btn btn btn-outline-secondary" %>
-    <%= link_to "Tasks Today", due_today_path, class: "add-category-btn btn btn-outline-secondary" %>
+    <%= link_to "Add Category", new_category_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "Tasks Today", due_today_path, class: "btn btn-outline-secondary" %>
   </div>
   <ul class="category-list">
     <% @categories.each do |category| %>
