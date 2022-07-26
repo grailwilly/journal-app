@@ -2,3 +2,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.view-task {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
