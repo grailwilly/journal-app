@@ -1,0 +1,27 @@
+<%= render "categories/top_nav" %>
+<div class="container">
+  <div class="due-today">
+    <h1>Task Due Today</h1>
+    <% @tasks.each do |task| %>
+      <% if task.deadline == @date %>
+        <ul>
+          <li><%= task.name %></li>
+          <li><%= task.description %></li>
+          <li><%= task.deadline.strftime("%m/%d/%Y") %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="overdue-task">
+    <h1>Over Due Tasks</h1>
+    <% @tasks.each do |task| %>
+      <% if task.deadline < @date %>
+        <ul>
+          <li><%= task.name %></li>
+          <li><%= task.description %></li>
+          <li><%= task.deadline.strftime("%m/%d/%Y") %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>

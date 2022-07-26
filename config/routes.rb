@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  get 'due-today' => 'tasks#due_today'
+
   # get 'categories' => 'categories#index'
   # get '/categories/new' => 'categories#new'
   # get '/categories/:id' => 'categories#show'
