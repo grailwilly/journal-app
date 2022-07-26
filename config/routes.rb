@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/user/edit-profile' => 'devise/registration#edit'
   end
 
   get 'due-today' => 'tasks#due_today'

@@ -38,3 +38,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.edit-username {
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.edit-username:hover {
+    cursor: pointer;
+    color: #FFC0CB;
+}
