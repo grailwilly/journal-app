@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.category-actions {
+    margin-bottom: 20px;
+}
+
 .category-list {
     width: 50%;
 }

@@ -1,7 +1,10 @@
 <%= render "top_nav" %>
 <div class="categories">
   <h1 class="title">THE PROGRAMMER'S LIST</h1>
-  <p><%= @advice["slip"]["advice"] %></p>
+  <div class="category-actions">
+    <%= link_to "Add Category", new_category_path, class: "add-category-btn btn btn-outline-secondary" %>
+    <%= link_to "Tasks Today", due_today_path, class: "add-category-btn btn btn-outline-secondary" %>
+  </div>
   <ul class="category-list">
     <% @categories.each do |category| %>
       <%= link_to category_path(category.id) do %>
@@ -9,9 +12,7 @@
       <% end %>
     <% end %>
   </ul>
-  <div class="add-category">
-    <%= link_to "Add Category", new_category_path, class: "add-category-btn btn btn-outline-secondary" %>
-  </div>
+  <p><%= @advice["slip"]["advice"] %></p>
 </div>
 
 
