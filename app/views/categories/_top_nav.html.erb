@@ -8,6 +8,11 @@
   <div class="weather">
     <ul class="statistic">
       <li>
+      <%= image_tag "owl-profile.png", class: "icon" %>
+        <h5>Hello!</h5>
+        <p><%= current_user.email %></p>
+      </li>
+      <li>
           <img src=<%= @w_json["weather"][0]["icon"] %> class="icon" />
           <h5>Weather</h5>
           <p><%= @w_json["weather"][0]["description"] %></p>
