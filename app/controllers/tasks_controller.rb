@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   
     def create
       @task = @category.tasks.build(task_params)
-            
+      @task.user_id = current_user.id     
       if @task.save
         redirect_to category_path(@category)    
       else
