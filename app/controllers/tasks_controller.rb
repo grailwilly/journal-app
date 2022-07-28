@@ -17,6 +17,7 @@ class TasksController < ApplicationController
   
     def create
       @task = @category.tasks.build(task_params)
+      @task.user_id = current_user.id
       if @task.save
         redirect_to category_path(@category)    
       else
@@ -64,6 +65,6 @@ class TasksController < ApplicationController
     end
   
     def task_params
-      params.require(:task).permit(:name, :description, :deadline, :category_id)
+      params.require(:task).permit(:name, :description, :deadline, :category_id, :user_id)
     end
   end
