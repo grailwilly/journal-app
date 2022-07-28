@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_category, only: ['show', 'edit', 'update', 'destroy']
   before_action :get_time
   before_action :advice_api
   before_action :weather_api
@@ -9,7 +10,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
   end
   
   def new
@@ -18,6 +18,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    @category.user_id = current_user.id
     respond_to do |format|
       if @category.save
         format.html {redirect_to categories_path, notice: "Successfully create" }
@@ -28,11 +29,9 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
 
     respond_to do |format|
       if @category.update(category_params)
@@ -45,13 +44,17 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    
     @category.destroy
 
     redirect_to categories_path, status: 303
   end
 
   private 
+    def get_category
+      @category = Category.find(params[:id])
+    end
+
     def get_time
       @time = Time.new
     end
@@ -67,6 +70,6 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :user_id)
     end
 end

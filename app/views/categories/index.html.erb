@@ -7,11 +7,11 @@
   </div>
   <ul class="category-list">
     <% @categories.each do |category| %>
-      
+      <% if category.user_id == current_user.id %>
         <%= link_to category_path(category.id) do %>
           <li class="category-show"><%= category.name %></li>
         <% end %>
-      
+      <% end %>
     <% end %>
   </ul>
   <p><%= @advice["slip"]["advice"] %></p>
