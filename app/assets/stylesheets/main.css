@@ -6,3 +6,24 @@
     justify-content: center;
     height: 100%;
 }
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFC0CB;
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.github, .linkedin {
+  color: #000;
+}
+
+.github:hover , .linkedin:hover {
+  cursor: pointer;
+  color: #fff;
+}
