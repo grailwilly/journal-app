@@ -1,9 +1,9 @@
 <div id="top-nav">
   <div class="time">
-    <h1><%= @time.strftime("%I:%M %p") %></h1>
-    <h3><%= @time.strftime("Today is %A") %></h3>
-    <h3><%= @time.strftime("%d of %B, %Y") %></h3>
-    <h3><%= @w_json["name"] %></h3>
+    <h1><%= time.strftime("%I:%M %p") %></h1>
+    <h3><%= time.strftime("Today is %A") %></h3>
+    <h3><%= time.strftime("%d of %B, %Y") %></h3>
+    <h3><%= weather["name"] %></h3>
   </div>
   <div class="weather">
     <ul class="statistic">
@@ -14,29 +14,29 @@
         </a>
       </li>
       <li>
-          <img src=<%= @w_json["weather"][0]["icon"] %> class="icon" />
+          <img src=<%= weather["weather"][0]["icon"] %> class="icon" />
           <h5>Weather</h5>
-          <p><%= @w_json["weather"][0]["description"] %></p>
+          <p><%= weather["weather"][0]["description"] %></p>
         </li>
       <li>
         <%= image_tag "temperature-icon.png", class: "icon" %>
         <h5>Temperature</h5>
-        <p><%= @w_json["main"]["temp"] %> Celsius</p>
+        <p><%= weather["main"]["temp"] %> Celsius</p>
       </li>
       <li>
         <%= image_tag "wind-icon.png", class: "icon" %>
         <h5>Wind Speed</h5>
-        <p><%= @w_json["wind"]["speed"] %> k/h</p>
+        <p><%= weather["wind"]["speed"] %> k/h</p>
       </li>
       <li>
         <%= image_tag "sunset-icon.png", class: "icon" %>
         <h5>Sunset</h5>
-        <p> <%= Time.at(@w_json["sys"]["sunset"]).strftime("%I:%M %p") %></p>
+        <p> <%= Time.at(weather["sys"]["sunset"]).strftime("%I:%M %p") %></p>
       </li>
       <li>
         <%= image_tag "sunrise-icon.png", class: "icon" %>
         <h5>Sunrise</h5>
-        <p><%= Time.at(@w_json["sys"]["sunrise"]).strftime("%I:%M %p") %></p>
+        <p><%= Time.at(weather["sys"]["sunrise"]).strftime("%I:%M %p") %></p>
       </li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %></li>
     </ul>

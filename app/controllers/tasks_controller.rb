@@ -1,8 +1,6 @@
 class TasksController < ApplicationController
     before_action :get_category, except: ['due_today']
     before_action :get_task, only: ['show', 'edit', 'update', 'destroy']
-    before_action :post_time
-    before_action :weather_api
   
     def index
       @tasks = @category.tasks
@@ -54,16 +52,7 @@ class TasksController < ApplicationController
     def get_task
       @task = @category.tasks.find(params[:id])
     end
-
-    def post_time
-      @time = Time.new
-    end
-
-    def weather_api
-      @response = HTTParty.get("https://fcc-weather-api.glitch.me/api/current?lat=16.41639&lon=120.59306")
-      @w_json = JSON.parse(@response.body)
-    end
-  
+      
     def task_params
       params.require(:task).permit(:name, :description, :deadline, :category_id, :user_id)
     end
